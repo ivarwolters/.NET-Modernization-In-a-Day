@@ -80,7 +80,7 @@ In this task, you create an Azure resource group to serve as a container for the
 
 ### Task 2: Register required resource providers
 
-In this task, you register the `Microsoft.DataMigration` and `Microsoft.Search` resource providers within your Azure subscription. These resource providers allow Azure Cognitive Search and the Azure Database Migration Service to be provisioned within your subscription.
+In this task, you register the `Microsoft.ApiManagement`, `Microsoft.DataMigration` and `Microsoft.Search` resource providers within your Azure subscription. These resource providers allow Azure API Management, Azure Cognitive Search and the Azure Database Migration Service to be provisioned within your subscription.
 
 1. In the [Azure portal](https://portal.azure.com), select **Subscriptions** from the Azure services list.
 
@@ -97,6 +97,8 @@ In this task, you register the `Microsoft.DataMigration` and `Microsoft.Search` 
 4. Next, enter "search" into the filter box to locate the `Microsoft.Search` resource provider. If the status is not **Registered**, select **Register**, and wait for the resource status to be registered.
 
    ![The Register button is highlighted, search is entered into the filter box, and the Microsoft.Search resource provider is selected.](media/resource-providers-search.png "Microsoft Search Resource Provider")
+
+5. Next, enter "apimanagement" into the filter box to locate the `Microsoft.ApiManagement` resource provider. If the status is not **Registered**, select **Register**, and wait for the resource status to be registered.
 
    > **Note**: You may need to select Refresh to see the updated status.
 
