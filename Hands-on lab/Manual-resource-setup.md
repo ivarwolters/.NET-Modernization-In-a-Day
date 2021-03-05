@@ -596,7 +596,7 @@ In this task, you configure the LabVM with the required software and downloads. 
 
 6. Run the downloaded installer.
 
-7. Next, [download a copy of the GitHub repo for the App modernization MCW](https://github.com/microsoft/MCW-App-modernization/archive/master.zip).
+7. Next, [download a copy of the GitHub repo for the App modernization MCW](https://github.com/ivarwolters/.NET-Modernization-In-a-Day/archive/master.zip).
 
 8. Extract the download ZIP file to `C:\MCW`.
 
@@ -643,7 +643,7 @@ In this task, you open an RDP connection to the SqlServer2008 VM, disable Intern
 
 In this task, you restore the `ContosoInsurance` database onto the SQL Server 2008 R2 instance using a backup provided by Contoso, Ltd.
 
-1. On the SqlServer2008 VM, download a [backup of the ContosoInsurance database](https://raw.githubusercontent.com/microsoft/MCW-App-modernization/master/Hands-on%20lab/lab-files/Database/ContosoInsurance.zip), and extract the zipped files into `C:\ContosoInsurance` on the VM.
+1. On the SqlServer2008 VM, download a [backup of the ContosoInsurance database](https://raw.githubusercontent.com/ivarwolters/.NET-Modernization-In-a-Day/master/Hands-on%20lab/lab-files/Database/ContosoInsurance.zip), and extract the zipped files into `C:\ContosoInsurance` on the VM.
 
 2. Next, open **Microsoft SQL Server Management Studio** (SSMS) by entering "sql server" into the search bar in the Windows Start menu and selecting **Microsoft SQL Server Management Studio 17** from the results.
 
