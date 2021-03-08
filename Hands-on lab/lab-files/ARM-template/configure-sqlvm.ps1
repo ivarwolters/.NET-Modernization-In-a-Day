@@ -40,8 +40,9 @@ Invoke-WebRequest 'https://download.microsoft.com/download/C/6/3/C63D8695-CEF2-4
 Start-Process -file 'C:\DataMigrationAssistant.msi' -arg '/qn /l*v C:\dma_install.txt' -passthru | wait-process
 
 # Download and unzip the database backup file from the GitHub repo
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest 'https://raw.githubusercontent.com/ivarwolters/.NET-Modernization-In-a-Day/master/Hands-on%20lab/lab-files/Database/ContosoInsurance.zip' -OutFile 'C:\ContosoInsurance.zip'
-Expand-Archive -LiteralPath 'C:\ContosoInsurance.zip' -DestinationPath 'C:\ContosoInsurance' -Force
+
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 [System.IO.Compression.ZipFile]::ExtractToDirectory('C:\ContosoInsurance.zip','C:\ContosoInsurance')
 
