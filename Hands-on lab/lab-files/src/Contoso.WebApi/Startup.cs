@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Hosting;
 
 namespace Contoso.WebApi
 {
@@ -33,12 +34,10 @@ namespace Contoso.WebApi
                 });
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options => options.EnableEndpointRouting = false);
 
-            // ******************************************
-            // TODO #2: Update the code in this block to set the database connection from a Key Vault secret
-            services.AddDbContext<ContosoDbContext>(// Add the options to retrieve the database connection string from key vault)
-            // ******************************************
+            services.AddDbContext<ContosoDbContext>(options =>
+                options.UseSqlServer(Configuration["SqlConnectionString"]));
 
             // Register the Swagger generator
             services.AddSwaggerGen(c =>
@@ -48,7 +47,7 @@ namespace Contoso.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
